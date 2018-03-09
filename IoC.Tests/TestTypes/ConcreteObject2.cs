@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace IoCConsumerApp
+namespace IoC.Tests.TestTypes
 {
     public class ConcreteObject2 : IObject
     {

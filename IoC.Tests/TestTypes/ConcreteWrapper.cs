@@ -1,4 +1,4 @@
-﻿namespace IoCConsumerApp
+﻿namespace IoC.Tests.TestTypes
 {
     public class ConcreteWrapper<T> : IWrapper<T>
     {

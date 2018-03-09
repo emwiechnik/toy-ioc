@@ -1,4 +1,4 @@
-using IoCConsumerApp;
+using IoC.Tests.TestTypes;
 using System;
 using Xunit;
 
