@@ -14,10 +14,10 @@ namespace IoC.Tests
             ioc.For<IObject>().Use<ConcreteObject2>();
 
             // Act
-            var logger = ioc.Resolve<IObject>();
+            var obj = ioc.Resolve<IObject>();
 
             // Assert
-            Assert.Equal(typeof(ConcreteObject2), logger.GetType());
+            Assert.Equal(typeof(ConcreteObject2), obj.GetType());
         }
 
         [Fact]
@@ -39,10 +39,10 @@ namespace IoC.Tests
             ioc.For<IWrapper<ConcreteObject1>>().Use<ConcreteWrapper<ConcreteObject1>>();
 
             // Act
-            var repository = ioc.Resolve<IWrapper<ConcreteObject1>>();
+            var wrapper = ioc.Resolve<IWrapper<ConcreteObject1>>();
 
             // Assert
-            Assert.Equal(typeof(ConcreteWrapper<ConcreteObject1>), repository.GetType());
+            Assert.Equal(typeof(ConcreteWrapper<ConcreteObject1>), wrapper.GetType());
         }
 
         [Fact]
@@ -54,10 +54,10 @@ namespace IoC.Tests
             ioc.For(typeof(IWrapper<>)).Use(typeof(ConcreteWrapper<>));
 
             // Act
-            var service = ioc.Resolve<ComplexConcreteObject>();
+            var complexObj = ioc.Resolve<ComplexConcreteObject>();
 
             // Assert
-            Assert.Equal(typeof(ComplexConcreteObject), service.GetType());
+            Assert.Equal(typeof(ComplexConcreteObject), complexObj.GetType());
         }
     }
 }
